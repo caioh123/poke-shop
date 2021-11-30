@@ -5,9 +5,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Home } from "../pages/Home";
 import { Shop } from "../pages/Shop";
 
-const stack = createStackNavigator();
-
 export const Router = () => {
+  const stack = createStackNavigator();
   return (
     <NavigationContainer>
       <stack.Navigator>

@@ -4,10 +4,7 @@ import {
   Container,
   ContainerGridImage,
   Image,
-  ImageBackground,
-  ImageContainer,
   ImageOption,
-  MainContainer,
   Button,
 } from "./styles";
 import { Text, TouchableOpacity, View } from "react-native";
@@ -17,10 +14,9 @@ import Fire from "../../img/fire.png";
 import Water from "../../img/water.png";
 import Rock from "../../img/rock.png";
 import { useNavigation } from "@react-navigation/core";
+import { StackScreenProps } from "@react-navigation/stack";
 
-const navigation = useNavigation();
-
-export const Home = () => {
+export const Home = ({ navigation }: any) => {
   return (
     <Container>
       <Wrapper>
