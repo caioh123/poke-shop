@@ -15,17 +15,24 @@ import Water from "../../img/water.png";
 import Rock from "../../img/rock.png";
 import { useNavigation } from "@react-navigation/core";
 import { StackScreenProps } from "@react-navigation/stack";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootStackParamList } from "../../common/types"; 
 
-export const Home = ({ navigation }: any) => {
+type mainScreenProp = StackNavigationProp<RootStackParamList, "Home">
+
+export const Home = () => {
+
+const navigation = useNavigation<mainScreenProp>()
+
   return (
     <Container>
       <Wrapper>
         <Image resizeMode="center" source={Pokelogo} />
         <ContainerGridImage>
-          <Button onPress={() => navigation.navigate("Shop")}>
+          <Button onPress={() => navigation.navigate("Shop", {type: "grass"})}>
             <ImageOption resizeMode="center" source={Grass} />
           </Button>
-          <Button>
+          <Button onPress={() => navigation.navigate("Shop", {type: "fire"})}>
             <ImageOption resizeMode="center" source={Fire} />
           </Button>
         </ContainerGridImage>
