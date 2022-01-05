@@ -18,6 +18,7 @@ justify-content: space-between;
 
 export const Image = styled.Image`
   width: 40%;
+  opacity: 0.8;
 `;
 
 export const ButtonBack = styled.TouchableOpacity`

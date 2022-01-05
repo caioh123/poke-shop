@@ -19,7 +19,7 @@ export const Header = ({ typeElement }: any) => {
             <TextHeader>Meu carrinho</TextHeader>
             <TextHeader>0 itens</TextHeader>
           </View>
-          <AntDesign name='shoppingcart' size={24} color={colors.white} />
+          <AntDesign name='shoppingcart' size={30} color={colors.white} />
         </Wrapper>
       </Container>
     </>
