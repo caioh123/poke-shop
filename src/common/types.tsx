@@ -1,3 +1,5 @@
+import { Image } from "react-native";
+
 export type RootStackParamList = {
   Home: { typeElement: string };
   Shop: { typeElement: string };
@@ -9,6 +11,5 @@ export type ShopParamList = {
 };
 
 export type PokeData = {
-  name: string;
-  item: { pokemon: { name: string; url: string } };
+  item: { pokemon: { name: string, id: number, url: string } };
 };

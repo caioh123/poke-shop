@@ -6,14 +6,16 @@ import { RouteProp } from '@react-navigation/native';
 import { Header } from '../../common/Header';
 import api from '../../services/api';
 import { ShopParamList, PokeData } from '../../common/types';
+import { Card } from '../../common/components/Card';
 
 type Props = NativeStackScreenProps<ShopParamList, 'Shop'>;
 
 export const Shop = ({ route }: Props) => {
   const [pokemons, setPokemons] = useState<PokeData[]>([]);
 
+  
   const { typeElement } = route.params;
-
+  
   useEffect(() => {
     api.get(`/type/${typeElement}`).then((response) => {
       setPokemons(response.data.pokemon);
@@ -27,7 +29,7 @@ export const Shop = ({ route }: Props) => {
         <FlatList
           data={pokemons}
           renderItem={({ item }: PokeData) => {
-            return <Text style={{ color: 'white' }}>{item.pokemon.name}</Text>;
+            return <Card item={item} />
           }}
         />
       </MainContainer>
