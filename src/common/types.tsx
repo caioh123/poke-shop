@@ -10,6 +10,13 @@ export type ShopParamList = {
   Shop: { typeElement: string };
 };
 
-export type PokeData = {
+export type PokeDataList = {
   item: { pokemon: { name: string, id: number, url: string } };
+  typeElement: string;
 };
+
+export type PokeData = {
+  id: number;
+  sprites: { front_default: string };
+
+}
