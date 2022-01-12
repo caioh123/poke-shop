@@ -4,6 +4,9 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { DetailsParams, PokeStatus } from "../../common/types";
 import api from "../../services/api";
 import { Header } from "../../common/Header";
+import { MainContainer } from "./styles";
+import { Card } from "../../common/components/Card";
+import { CardStatus } from "../../common/components/CardStatus";
 
 type Props = NativeStackScreenProps<DetailsParams, "Details">;
 
@@ -12,7 +15,7 @@ export const Details = ({ route }: Props) => {
 
   const [pokemon, setPokemon] = useState({} as PokeStatus);
 
-  console.log(pokemon);
+
   useEffect(() => {
     api.get(`/pokemon/${id}`).then((response) => {
       setPokemon(response.data);
@@ -22,7 +25,9 @@ export const Details = ({ route }: Props) => {
   return (
     <>
       <Header typeElement={typeElement} />
-      <Text>{pokemon.name}</Text>
+      <MainContainer>
+        <CardStatus pokemon={pokemon} />
+      </MainContainer>
     </>
   );
 };
