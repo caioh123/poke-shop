@@ -5,5 +5,6 @@ export const colors = {
   lightFire: "#ff5c5c",
   grass: "#7AC74C",
   lightGrass: "#d3ffd1",
+  lightWhite: "#777777"
 
 };

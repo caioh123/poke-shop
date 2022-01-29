@@ -31,7 +31,6 @@ export type PokeData = {
 };
 
 export type PokeStatus = {
-  pokemon: {
 
     name: string;
     id: number;
@@ -43,5 +42,19 @@ export type PokeStatus = {
         name: string;
       };
     };
-  }
+
+    types: [
+      type: {
+        name: string
+      }
+    ]
 };
+
+
+export type TypeProps = {
+  item: {
+    type: {
+      name: string;
+    };
+  };
+}

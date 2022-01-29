@@ -6,7 +6,7 @@ export const CardStatus = ({ pokemon }: PokeStatus) => {
     console.log(pokemon);
   return (
     <>
-      <Text style={{backgroundColor: "white"}}>{pokemon.stats[1].stat.name}AA</Text>
+      <Text style={{backgroundColor: "white"}}>AA</Text>
     </>
   );
 };

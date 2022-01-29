@@ -27,8 +27,6 @@ export const Card = ({ item, typeElement }: PokeDataList) => {
 
   useEffect(() => {
     api.get(item.pokemon.url).then((response) => {
-      // setPokemonImage(response.data.sprites.front_default)
-      // setPokemonId(response.data.id)
       setPokemon(response.data);
     });
   }, []);
