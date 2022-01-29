@@ -34,26 +34,27 @@ export const Image = styled.Image`
 `;
 
 export const ContainerTypesWrapper = styled.View`
-width: 80%;
-`
+  width: 80%;
+`;
 
-export const ContainerType = styled.Text<Props>`
-font-size: 24px;
-font-weight: bold;
-align-self: flex-start;
-
-`
+export const ContainerType = styled.Text`
+  font-size: 24px;
+  font-weight: bold;
+  align-self: flex-start;
+`;
 
 export const Type = styled.Text`
-font-size: 16px;
-color: black;
-
-`
+  font-size: 16px;
+  color: black;
+`;
 
 export const ContainerTypes = styled.View`
-flex-direction: column;
+  flex-direction: column;
 
-margin-top: 5%;
-
-
-`
+  margin-top: 5%;
+`;
+export const ContainerStats = styled.View`
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-between;
+`;

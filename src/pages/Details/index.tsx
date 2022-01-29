@@ -14,6 +14,7 @@ import {
   PokePrice,
   ContainerType,
   Type,
+  ContainerStats
 } from "./styles";
 import { Card } from "../../common/components/Card";
 import { CardStatus } from "../../common/components/CardStatus";
@@ -59,13 +60,38 @@ export const Details = ({ route }: Props) => {
                 data={pokemon.types}
                 renderItem={({ item }: TypeProps) => (
                   <>
-
                     <Type>{item.type.name}</Type>
                   </>
                 )}
-                />
+              />
             </ContainerTypes>
-            <ContainerType style={{marginTop: "5"}}>Stats Iniciais</ContainerType>
+            <ContainerType style={{ marginTop: 10 }}>
+              Stats Iniciais
+            </ContainerType>
+            <ContainerStats>
+              <Type>HP</Type>
+              <Type>80</Type>
+            </ContainerStats>
+            <ContainerStats>
+              <Type>Attack</Type>
+              <Type>80</Type>
+            </ContainerStats>
+            <ContainerStats>
+              <Type>Defense</Type>
+              <Type>80</Type>
+            </ContainerStats>
+            <ContainerStats>
+              <Type>Special-Attack</Type>
+              <Type>80</Type>
+            </ContainerStats>
+            <ContainerStats>
+              <Type>Special-Attack</Type>
+              <Type>80</Type>
+            </ContainerStats>
+            <ContainerStats>
+              <Type>Speed</Type>
+              <Type>80</Type>
+            </ContainerStats>
           </ContainerTypesWrapper>
         </Container>
       </MainContainer>
