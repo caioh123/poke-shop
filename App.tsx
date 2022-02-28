@@ -7,10 +7,13 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Shop } from "./src/pages/Shop";
 import { RootStackParamList } from "./src/common/types";
 import { Router } from "./src/routes/router";
+import { CartProvider } from "./src/context/cartContext";
 
 export default function App() {
   const stack = createStackNavigator<RootStackParamList>();
   return (
-    <Router />
+    <CartProvider>
+      <Router />
+    </CartProvider>
   );
 }

@@ -30,22 +30,26 @@ export type PokeData = {
   sprites: { front_default: string };
 };
 
+export type PokeStatusCard = {
+  base_stat: string;
+  stat: { name: string };
+}
+
 export type PokeStatus = {
 
     name: string;
     id: number;
     sprites: { front_default: string };
 
-    stats: {
-      base_stat: number;
-      stat: {
-        name: string;
-      };
-    };
+    stats: PokeStatusCard[]
+    
 
     types: [
-      type: {
-        name: string
+      {
+
+        type: {
+          name: string
+        }
       }
     ]
 };

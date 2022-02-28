@@ -14,12 +14,15 @@ import {
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../../../common/types";
 import { useNavigation } from "@react-navigation/core";
+import { useCart } from "../../../context/cartContext";
 
 export const Card = ({ item, typeElement }: PokeDataList) => {
   const [pokemon, setPokemon] = useState({
     id: 0,
     sprites: { front_default: "" },
   } as PokeData);
+
+  const { cart, addToCart, removeFromCart } = useCart();
 
   type cardScreenProp = StackNavigationProp<RootStackParamList, "Details">;
 
@@ -49,7 +52,10 @@ export const Card = ({ item, typeElement }: PokeDataList) => {
           <CardText>{item.pokemon.name}</CardText>
           <CardText bold="bold">{formatPricetoBRL(pokemon.id)}</CardText>
         </Wrapper>
-        <CardButton typeElement={typeElement}>
+        <CardButton
+          onPress={() => removeFromCart(item.pokemon)}
+          typeElement={typeElement}
+        >
           <CardButtonText>ADICIONAR AO CARRINHO </CardButtonText>
         </CardButton>
       </TouchableOpacity>

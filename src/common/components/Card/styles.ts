@@ -48,5 +48,6 @@ export const CardButtonText = styled.Text`
   font-size: 18px;
   color: ${colors.white};
   font-weight: bold;
+  margin: 5px;
 
 `

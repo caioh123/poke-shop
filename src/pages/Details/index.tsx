@@ -14,26 +14,33 @@ import {
   PokePrice,
   ContainerType,
   Type,
-  ContainerStats
+  ContainerStats,
 } from "./styles";
 import { Card } from "../../common/components/Card";
 import { CardStatus } from "../../common/components/CardStatus";
 import { formatPricetoBRL } from "../../common/functions";
 import { FlatList } from "react-native-gesture-handler";
 import { TypeProps } from "../../common/types";
+import { useCart } from "../../context/cartContext";
 
 type Props = NativeStackScreenProps<DetailsParams, "Details">;
 
 export const Details = ({ route }: Props) => {
   const { typeElement, id } = route.params;
 
-  const [pokemon, setPokemon] = useState({} as PokeStatus);
+  const [pokemon, setPokemon] = useState(null as PokeStatus | null);
+
+  const { cart, addToCart } = useCart();
 
   useEffect(() => {
     api.get(`/pokemon/${id}`).then((response) => {
       setPokemon(response.data);
     });
   }, []);
+
+  if (!pokemon) {
+    return <Text>loading</Text>;
+  }
 
   return (
     <>
@@ -68,30 +75,32 @@ export const Details = ({ route }: Props) => {
             <ContainerType style={{ marginTop: 10 }}>
               Stats Iniciais
             </ContainerType>
-            <ContainerStats>
-              <Type>HP</Type>
-              <Type>80</Type>
-            </ContainerStats>
-            <ContainerStats>
-              <Type>Attack</Type>
-              <Type>80</Type>
-            </ContainerStats>
-            <ContainerStats>
-              <Type>Defense</Type>
-              <Type>80</Type>
-            </ContainerStats>
-            <ContainerStats>
-              <Type>Special-Attack</Type>
-              <Type>80</Type>
-            </ContainerStats>
-            <ContainerStats>
-              <Type>Special-Attack</Type>
-              <Type>80</Type>
-            </ContainerStats>
-            <ContainerStats>
-              <Type>Speed</Type>
-              <Type>80</Type>
-            </ContainerStats>
+            <>
+              <ContainerStats>
+                <Type>{pokemon.stats[0].stat.name}</Type>
+                <Type>{pokemon.stats[0].base_stat}</Type>
+              </ContainerStats>
+              <ContainerStats>
+                <Type>{pokemon.stats[1].stat.name}</Type>
+                <Type>{pokemon.stats[1].base_stat}</Type>
+              </ContainerStats>
+              <ContainerStats>
+                <Type>{pokemon.stats[2].stat.name}</Type>
+                <Type>{pokemon.stats[2].base_stat}</Type>
+              </ContainerStats>
+              <ContainerStats>
+                <Type>{pokemon.stats[3].stat.name}</Type>
+                <Type>{pokemon.stats[3].base_stat}</Type>
+              </ContainerStats>
+              <ContainerStats>
+                <Type>{pokemon.stats[4].stat.name}</Type>
+                <Type>{pokemon.stats[4].base_stat}</Type>
+              </ContainerStats>
+              <ContainerStats>
+                <Type>{pokemon.stats[5].stat.name}</Type>
+                <Type>{pokemon.stats[5].base_stat}</Type>
+              </ContainerStats>
+            </>
           </ContainerTypesWrapper>
         </Container>
       </MainContainer>
