@@ -29,7 +29,11 @@ export const Header = ({ typeElement }: Props) => {
           <TextHeader element="back"> Voltar</TextHeader>
         </ButtonBack>
         <Image resizeMode="center" source={Pokelogo} />
-        <Wrapper onPress={() => navigation.navigate("Cart")}>
+        <Wrapper
+          onPress={() =>
+            navigation.navigate("Cart", { typeElement: typeElement })
+          }
+        >
           <View>
             <TextHeader>Meu carrinho</TextHeader>
             <TextHeader>{cart.length} itens</TextHeader>

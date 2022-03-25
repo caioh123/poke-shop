@@ -4,7 +4,7 @@ export type RootStackParamList = {
   Home: { typeElement: string };
   Shop: { typeElement: string };
   Details: { typeElement: string; id: number };
-  Cart: undefined;
+  Cart: { typeElement: string };
 };
 
 export type ShopParamList = {
