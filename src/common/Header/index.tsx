@@ -1,22 +1,29 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { Container, Image, ButtonBack, TextHeader, Wrapper } from "./styles";
 import Pokelogo from "../../img/pokelogo.png";
+import { useNavigation } from "@react-navigation/core";
+
+import { Container, Image, ButtonBack, TextHeader, Wrapper } from "./styles";
 import { AntDesign } from "@expo/vector-icons";
 import { colors } from "../commonStyles";
 import { useCart } from "../../context/cartContext";
 
-export const Header = ({ typeElement }: string) => {
+interface Props {
+  typeElement: string;
+}
+
+export const Header = ({ typeElement }: Props) => {
   const { cart, addToCart } = useCart();
 
-  console.log(cart);
+  const navigation = useNavigation();
 
+  console.log(typeElement);
   return (
     <>
       <Container typeElement={typeElement}>
-        <ButtonBack>
+        <ButtonBack onPress={() => navigation.goBack()}>
           <AntDesign name="back" size={30} color={colors.white} />
-          <TextHeader element="back">Lojas</TextHeader>
+          <TextHeader element="back"> Voltar</TextHeader>
         </ButtonBack>
         <Image resizeMode="center" source={Pokelogo} />
         <Wrapper>

@@ -53,7 +53,7 @@ export const Card = ({ item, typeElement }: PokeDataList) => {
           <CardText bold="bold">{formatPricetoBRL(pokemon.id)}</CardText>
         </Wrapper>
         <CardButton
-          onPress={() => removeFromCart(item.pokemon)}
+          onPress={() => addToCart(item.pokemon)}
           typeElement={typeElement}
         >
           <CardButtonText>ADICIONAR AO CARRINHO </CardButtonText>
