@@ -7,6 +7,7 @@ import { Home } from "../pages/Home";
 import { Shop } from "../pages/Shop";
 import { RootStackParamList } from "../common/types";
 import { Details } from "../pages/Details";
+import { Cart } from "../pages/Cart";
 
 export const Router = () => {
   const stack = createStackNavigator<RootStackParamList>();
@@ -28,6 +29,11 @@ export const Router = () => {
           options={{ headerShown: false }}
           name="Details"
           component={Details}
+        />
+        <stack.Screen
+          options={{ headerShown: false }}
+          name="Cart"
+          component={Cart}
         />
       </stack.Navigator>
     </NavigationContainer>

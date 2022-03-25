@@ -4,6 +4,7 @@ export type RootStackParamList = {
   Home: { typeElement: string };
   Shop: { typeElement: string };
   Details: { typeElement: string; id: number };
+  Cart: undefined;
 };
 
 export type ShopParamList = {
@@ -33,27 +34,23 @@ export type PokeData = {
 export type PokeStatusCard = {
   base_stat: string;
   stat: { name: string };
-}
-
-export type PokeStatus = {
-
-    name: string;
-    id: number;
-    sprites: { front_default: string };
-
-    stats: PokeStatusCard[]
-    
-
-    types: [
-      {
-
-        type: {
-          name: string
-        }
-      }
-    ]
 };
 
+export type PokeStatus = {
+  name: string;
+  id: number;
+  sprites: { front_default: string };
+
+  stats: PokeStatusCard[];
+
+  types: [
+    {
+      type: {
+        name: string;
+      };
+    }
+  ];
+};
 
 export type TypeProps = {
   item: {
@@ -61,4 +58,4 @@ export type TypeProps = {
       name: string;
     };
   };
-}
+};
